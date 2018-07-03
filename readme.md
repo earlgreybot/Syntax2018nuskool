@@ -1,3 +1,3 @@
-#for syntax demoparty 2018
+# For syntax demoparty 2018
 
 An in progress nuskool demo by Dandy and Greybot
