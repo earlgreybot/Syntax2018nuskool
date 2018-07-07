@@ -11,3 +11,32 @@ Onyx         			#3b363a
 body {
 	background-color: #3b363a;
 }
+
+#triangle {
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 100px solid #bca7a4;
+}
+
+#circle {
+	width: 100px;
+	height: 100px;
+	background: #f3a247;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+
+#bluesquare {
+	width: 100px;
+	height: 100px;
+	background: #5372c5;
+}
+
+#pinksquare {
+	width: 100px;
+	height: 100px;
+	background: #e14958;
+}
