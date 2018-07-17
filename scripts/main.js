@@ -1,26 +1,60 @@
+/* 
+ *
+ * Code by Dandy: https://github.com/WhimsicallyDandy/Syntax2018nuskool
+ * and greybot: https://github.com/earlgreybot/Syntax2018nuskool 
+ * for Syntax 2018
+ * 
+ * 
+ * Goals:
+ * Teledildonix out of CSS
+ * Rotate shapes
+ * 
+ */
+
+/* INIT */
 console.log('this is valig code');
 
+
+/* CONSTANTS */
 const SHAPE_SIZE = 100;
-const RAND_INTERVAL = 3000;
+const MOVE_INTERVAL = 1000;
+const YEET = 100;
+
+/* VARIABLES */
+var spans = $('span');
+var animInterval = MOVE_INTERVAL;
 
 
+/* MAIN: READY */
 
 // this only runs the following corde when the page is ready to be manipulated,
 // though not when everything is loaded, like pics
 $(document).ready(function() {
-    // this is also super dumb and needs to be in its own file
+    // y u override
     $('#circle').css('position', 'fixed');
+    
+    randElementPos('span', SHAPE_SIZE);
+    var interval = setInterval(function() {
+        //randElementPos('span', SHAPE_SIZE);
+        randElementMove('span', animInterval);
+    }, animInterval);
+
+    /* Buttons and stuff */
+    // yeets to right
     $('#butt').click(function(event) {
         $('#circle').animate({
             left: '+=500px'
             }, 'slow');
-    })
-    setInterval(function() {
-        randElementPos('span', SHAPE_SIZE);
-        randElementMove('span', 1000);
-    }, RAND_INTERVAL);
-    //randElementPos('span', SHAPE_SIZE);
-})
+    });
+    // sets animation to YEET
+    $('#interval-set').click(function(event) {
+        animInterval = YEET;
+        var interval = setInterval(function() {
+            //randElementPos('span', SHAPE_SIZE);
+            randElementMove('span', animInterval);
+        }, animInterval);
+    });
+});
 
 /* METHODS/FUNCTIONS/WHATEVER */
 
@@ -30,8 +64,6 @@ $(document).ready(function() {
 function randElementPos(e, buffer) {
     $(e).each(function(index) {
         // creates a random int between 0 and document width /2
-        //var randx = Math.floor(Math.random() * $(document).width()/2);
-        //var randy = Math.floor(Math.random() * $(document).height()/2);
         $(this).css('top', randY(buffer)+'px');
         $(this).css('left', randX(buffer)+'px');
     }); 
@@ -40,7 +72,13 @@ function randElementPos(e, buffer) {
 function randElementMove(e, t) {
     $(e).each(function(index) {
         moveTo($(this), randX(SHAPE_SIZE), randY(SHAPE_SIZE), t);
-    })
+    });
+}
+
+function repRandElementMove(e, t) {
+    randElementMove(e, t, function() {
+        repRandElementMove(e, t);
+    });
 }
 
 /* HELPERS */
@@ -65,6 +103,14 @@ function randX(buffer) {
 
 function randY(buffer) {
     return randInt(0, $(document).height()-buffer);
+}
+
+function toRad(x) {
+    return x*Math.PI/180;
+}
+
+function toDeg(x) {
+    return x*180/Math.PI;
 }
 
 /* This is the failed bee experiment
