@@ -18,6 +18,7 @@ body {
 	border-left: 50px solid transparent;
 	border-right: 50px solid transparent;
 	border-bottom: 100px solid #bca7a4;
+	display: inline-block;
 }
 
 #circle {
@@ -27,16 +28,19 @@ body {
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
 	border-radius: 50px;
+	display: inline-block;
 }
 
 #bluesquare {
 	width: 100px;
 	height: 100px;
 	background: #5372c5;
+	display: inline-block;
 }
 
 #pinksquare {
 	width: 100px;
 	height: 100px;
 	background: #e14958;
+	display: inline-block;
 }
