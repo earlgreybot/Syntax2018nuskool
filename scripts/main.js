@@ -1,5 +1,8 @@
 console.log('this is valig code');
 
+
+
+/* This is the failed bee experiment
 // requests to open file
 var bee = new XMLHttpRequest();
 var beeText;
@@ -20,3 +23,4 @@ bee.onload = function() {
     }
 }
 bee.send(null);
+*/
