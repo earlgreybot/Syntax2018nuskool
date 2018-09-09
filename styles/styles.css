@@ -10,6 +10,14 @@ Onyx         			#3b363a
 
 body {
 	background-color: #3b363a;
+	position: relative;
+}
+
+div {
+	position: fixed;
+}
+span {
+	position: fixed;
 }
 
 #triangle {

@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<!-- 
+    Demo for Syntax 2018
+    Stuff by earlgreybot and Dandy
+-->
 <html>
     <head>
         <link rel='stylesheet' type='text/css' href='styles/styles.css'>
@@ -8,6 +12,17 @@
     </head>
     <body>
         <button id = "butt">click to beep</button>
+        <button id = "interval-set">YEET</button>
+        <!--action= [script source] is supposed to go in the form tag but what the hell-->
+        <form id = "yeet-form" method ="POST"  >
+            <fieldset>
+                <span>
+                    <label for="yeetstuff">Enter yeet</label>
+                    <input type="number" name="yeetstuff"/>
+                    <input type="submit" value = "READY TO YEET" />
+                </span>
+            </fieldset>
+        </form>
         <p>
             Demo by <em>greybot</em> and <em>Dandy</em> m?
             <br>
@@ -46,17 +61,7 @@
             <span id="circle"></span>
         </div>
         <script> 
-        // this only runs the following corde when the page is ready to be manipulated,
-        // though not when everything is loaded, like pics
-        $(document).ready(function() {
-            // this is also super dumb and needs to be in its own file
-            $('#circle').css('position', 'absolute');
-            $('#butt').click(function(event) {
-                $('#circle').animate({
-                    right: '100px'
-                    }, 'fast');
-            })
-        })
+        
         </script>
         <script src = 'scripts/main.js'></script>
     </body>
